@@ -3,23 +3,25 @@ const searchFood = () => {
     const inputText = inputField.value;
     inputField.value = '';
 
-    if (inputText == '') {
-        const block = document.getElementById("bloc");
-        block.style.display = 'block';
-    }
-    else {
-        const block = document.getElementById("bloc");
-        block.style.display = 'none';
-        const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${inputText}`
+    // if (inputText == '') {
+    //     const block = document.getElementById("bloc");
+    //     block.style.display = 'block';
+    // }
 
-        fetch(url)
-            .then(res => res.json())
-            .then(data => showMeals(data.meals))
-    }
+    // const block = document.getElementById("bloc");
+    // block.style.display = 'none';
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${inputText}`
+
+    fetch(url)
+        .then(res => res.json())
+        .then(data => showFood(data.meals))
+
 
 
 
 }
+searchFood();
+
 
 const showFood = food => {
     const searchResult = document.getElementById("search-result");
@@ -41,9 +43,9 @@ const showFood = food => {
             <div class="card h-100">
                     <img src="${meal.strMealThumb}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 style='color:rgb(13, 182, 224)' class="card-title">${meal.strMeal}</h5>
+                        <h5 style='color:#dc3545' class="card-title">${meal.strMeal}</h5>
                         <p class="card-text">${meal.strInstructions.slice(0, 200)}</p>
-                        <div class="btn btn-danger">Show Details</div>
+                        <div onclick='loadMealDetail(${meal.idMeal})' class="btn btn-danger">Show Details</div>
                     </div>
                 </div>
             `
@@ -51,5 +53,11 @@ const showFood = food => {
         }
         )
     }
+
+
+}
+
+// Show More Details
+const loadMealDetail = () => {
 
 }

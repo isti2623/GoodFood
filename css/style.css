@@ -34,3 +34,18 @@ color: #dc3545 !important ;
     margin-bottom: 350px;
     margin-right: 20px ;
    }
+
+   #block{
+    display: none;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    color: #dc3545;
+}
+#bloc{
+    display: none;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    color: #dc3545;
+}

@@ -107,16 +107,22 @@
     <h1 class="text-danger fw-bold fs-1 my-5 text-center">Choose Your <span class="text-dark">Favorite</span> Food</h1>
     <!-- Input Field -->
     <div class="input-group mx-auto w-50 mb-5">
-        <input id="input-field" type="text" class="form-control" placeholder="Recipient's username"
+        <input id="input-field" type="text" class="form-control" placeholder="search your favorite food"
             aria-label="Recipient's username" aria-describedby="button-addon2">
         <button onclick="searchFood()" id="search-button" class="btn btn-danger" type="button">search</button>
     </div>
 
+
+    <!-- Error -->
+    <p id="block">Please Enter Food Name</p>
+
+    <!-- <p id="bloc">Please Enter Something</p> -->
     <!-- Show Card -->
 
-    <div id="show-card" class="row row-cols-1 row-cols-md-3 g-4 mb-5">
-        <div class="col">
-            <!-- <div class="card h-100">
+    <div class="container">
+        <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+            <div class="col">
+                <!-- <div class="card h-100">
                 <img src="${meal.strMealThumb}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 style='color:#dc3545' class="card-title">${meal.strMeal}</h5>
@@ -124,8 +130,11 @@
                     <div class="btn btn-danger">Show Details</div>
                 </div>
             </div> -->
+            </div>
         </div>
     </div>
+
+
 
 
 
