@@ -46,7 +46,9 @@ const showFood = food => {
                     <div class="card-body">
                         <h5 style='color:#dc3545' class="card-title fw-bold">${meal.strMeal}</h5>
                         <p class="card-text">${meal.strInstructions.slice(0, 200)}</p>
-                        <div onclick='loadMealDetail(${meal.idMeal})' class="btn btn-danger">Show Details</div>
+                        <button onclick="loadMealDetail(${meal.idMeal})" type="button" class="btn btn-danger">
+                        Show Details
+                    </button>
                     </div>
                 </div>
             `
@@ -67,22 +69,18 @@ const loadMealDetail = mealId => {
 }
 
 const displayMealDetail = meal => {
-    console.log(meal);
+
     const mealDetails = document.getElementById('meal-details');
+    mealDetails.textContent = '';
     const div = document.createElement('div');
-    div.classList.add('modal-content');
+    div.classList.add('card');
     div.innerHTML = `
-    <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Modal body text goes here.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+    <div class="card-body">
+    <h5 class="card-title">${meal.strMeal}</h5>
+    <p class="card-text">${meal.strInstructions.slice(0, 200)}</p>
+    <p class="card-text"><small target="_blank" class="text-muted">${meal.strYoutube}</small></p>
+</div>
+<img src="${meal.strMealThumb}"  class="img-fluid card-img-bottom" alt="...">
     `;
     mealDetails.appendChild(div);
 }
