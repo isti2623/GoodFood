@@ -49,3 +49,6 @@ color: #dc3545 !important ;
     font-weight: 700;
     color: #dc3545;
 }
+#spinner{
+    display: none;
+}
